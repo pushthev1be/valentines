@@ -7,6 +7,9 @@ export default function Page() {
   const [noCount, setNoCount] = useState(0);
   const [yesPressed, setYesPressed] = useState(false);
   const yesButtonSize = noCount * 20 + 16;
+  const bearImage = "/bear-roses.jpg";
+  const bearImageFallback =
+    "https://gifdb.com/images/high/cute-Love-bear-roses-ou7zho5oosxnpo6k.gif";
 
   const handleNoClick = () => {
     setNoCount(noCount + 1);
@@ -95,8 +98,13 @@ export default function Page() {
           />
           <img
             className="h-[230px] rounded-lg shadow-lg"
-            src="https://gifdb.com/images/high/cute-Love-bear-roses-ou7zho5oosxnpo6k.gif"
+            src={bearImage}
             alt="Bear holding roses"
+            onError={(event) => {
+              if (event.currentTarget.src !== bearImageFallback) {
+                event.currentTarget.src = bearImageFallback;
+              }
+            }}
           />
           <h1 className="text-4xl md:text-6xl my-4 text-center">
             Will you be my Valentine?
