@@ -90,6 +90,12 @@ export default function Page() {
               No turns into YES 😉
             </div>
           )}
+          <div className="marquee mt-3 text-base md:text-xl text-rose-800">
+            <span className="marquee__content">
+              You getting f#cked tonight — You getting f#cked tonight — You
+              getting f#cked tonight
+            </span>
+          </div>
         </>
       ) : (
         <>
