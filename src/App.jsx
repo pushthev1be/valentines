@@ -76,7 +76,7 @@ export default function Page() {
       {yesPressed ? (
         <>
           <audio autoPlay loop>
-            <source src="/you-getting-fd-tonight.mp3" type="audio/mpeg" />
+            <source src="/valentine-song.mp3" type="audio/mpeg" />
           </audio>
           <img
             src="/yes.gif"
