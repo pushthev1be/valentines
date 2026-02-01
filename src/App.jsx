@@ -6,6 +6,7 @@ import lovesvg2 from "./assets/Love In The Air SVG Cut File.svg";
 export default function Page() {
   const [noCount, setNoCount] = useState(0);
   const [yesPressed, setYesPressed] = useState(false);
+  const [forcedYes, setForcedYes] = useState(false);
   const yesButtonSize = noCount * 20 + 16;
   const bearImage = "/bear-roses.jpg";
   const bearImageFallback =
@@ -13,6 +14,7 @@ export default function Page() {
 
   const handleNoClick = () => {
     setNoCount(noCount + 1);
+    setForcedYes(true);
     setYesPressed(true);
   };
 
@@ -74,7 +76,7 @@ export default function Page() {
       {yesPressed ? (
         <>
           <audio autoPlay loop>
-            <source src="/valentine-song.mp3" type="audio/mpeg" />
+            <source src="/you-getting-fd-tonight.mp3" type="audio/mpeg" />
           </audio>
           <img
             src="/yes.gif"
@@ -83,6 +85,11 @@ export default function Page() {
           <div className="text-4xl md:text-6xl font-bold my-4">
             It says YES! 💘
           </div>
+          {forcedYes && (
+            <div className="text-lg md:text-2xl font-semibold text-rose-700">
+              No turns into YES 😉
+            </div>
+          )}
         </>
       ) : (
         <>
@@ -121,7 +128,7 @@ export default function Page() {
               onClick={handleNoClick}
               className=" bg-rose-500 hover:bg-rose-600 rounded-lg text-white font-bold py-2 px-4"
             >
-              {noCount === 0 ? "No" : getNoButtonText()}
+              No
             </button>
           </div>
         </>
