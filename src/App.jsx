@@ -136,6 +136,7 @@ export default function Page() {
             <button
               onClick={handleNoClick}
               className=" bg-rose-500 hover:bg-rose-600 rounded-lg text-white font-bold py-2 px-4"
+              title="Yes"
             >
               No
             </button>
